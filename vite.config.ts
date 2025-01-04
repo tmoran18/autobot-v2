@@ -19,5 +19,15 @@ export default defineConfig({
         },
       },
     },
+    minify: 'terser', // Use terser for better minification
+    terserOptions: {
+      compress: {
+        pure_funcs: ['console.log'], // Remove specific functions
+      },
+    },
+    target: 'es2015', // Optimize for modern browsers
+    reportCompressedSize: true, // See compressed sizes in build output
+    cssMinify: true, // Ensure CSS is minified
+    cssCodeSplit: false, // Keep CSS in one file
   },
 })
